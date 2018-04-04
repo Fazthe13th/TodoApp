@@ -15,7 +15,6 @@
     <body>
         
         @yield("content")
-        <h1>Hello</h1>
     </body>
     <script src="js/app.js"></script>
 </html>
