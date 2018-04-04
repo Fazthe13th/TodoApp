@@ -8,15 +8,20 @@
     </div>
 </div>
 @section('content')
-<div class='row'>
-    <div class="col-lg-6 col-lg-offset-3">
+<div class='row' style="">
+    
         @foreach ($todos as $todo)
+            <div class="col-lg-12">
                 <hr>
-                    <h4 style="text-align: right;">{{$todo->todo}}<button class="btn btn-danger">Delete</button></h4>
-                    
-                <hr>
-            <br>
+                    <div class="col-lg-6 col-lg-offset-3">
+                                <h4 style="text-align: right;">{{$todo->todo}}</h4>
+                    </div>
+                    <div class="col-lg-2">
+                        <button class="btn btn-danger">Delete</button>
+                    </div>
+                
+            </div>
         @endforeach
-    </div>
+    
 </div>
 @stop
