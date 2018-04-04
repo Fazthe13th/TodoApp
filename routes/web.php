@@ -13,3 +13,5 @@
 
 Route::get('/', ['uses' => 'TodoController@index']
 );
+Route::post('/create/todo', ['uses' => 'TodoController@createtodo']
+);
