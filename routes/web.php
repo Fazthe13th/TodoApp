@@ -11,11 +11,19 @@
 |
 */
 
-Route::get('/', ['uses' => 'TodoController@index']
+Route::get('/', ['uses' => 'TodoController@index', 'as' => 'todo.index']
 );
 Route::post('/create/todo', ['uses' => 'TodoController@createtodo']
 );
 Route::get('/todo/delete/{id}', 
 ['uses' => 'TodoController@delete',
 'as' => 'todo.delete']
+);
+Route::get('/todo/update/{id}', 
+['uses' => 'TodoController@update',
+'as' => 'todo.update']
+);
+Route::post('/todo/save/{id}', 
+['uses' => 'TodoController@save',
+'as' => 'todo.save']
 );

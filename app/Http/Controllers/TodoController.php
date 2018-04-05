@@ -26,6 +26,21 @@ class TodoController extends Controller
         
     }
 
+    public function update($id)
+    {
+        
+        $todo = $this->todoObj->find($id);
+        return view('update')->with('todo', $todo);
+    }
+
+    public function save(Request $request, $id)
+    {
+        $todo = $this->todoObj->find($id);
+        $todo->todo = $request->todo;
+        $todo->save();
+        return redirect()->route('todo.index');
+    }
+
     public function delete($id)
     {
         
