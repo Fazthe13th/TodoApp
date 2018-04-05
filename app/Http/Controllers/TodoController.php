@@ -6,7 +6,10 @@ use Illuminate\Http\Request;
 use App\Todo;
 class TodoController extends Controller
 {
-    //
+    public $todoObj;
+    public function __construct() {
+        $this->todoObj = new Todo;
+    }
     public function index()
     {
         $todos = Todo::all();
@@ -15,10 +18,19 @@ class TodoController extends Controller
 
     public function createtodo(Request $request)
     {
-        $todo = new Todo;
-        $todo->todo = $request->todo;
-        $todo->save();
+        
+        $this->todoObj->todo = $request->todo;
+        $this->todoObj->save();
 
+        return redirect()->back();
+        
+    }
+
+    public function delete($id)
+    {
+        
+        $todo = $this->todoObj->find($id);
+        $todo->delete();
         return redirect()->back();
         
     }

@@ -14,10 +14,9 @@
             <div class="col-lg-12">
                 <hr>
                     <div class="col-lg-6 col-lg-offset-3">
-                                <h4 style="text-align: right;">{{$todo->todo}}</h4>
-                    </div>
-                    <div class="col-lg-2">
-                        <button class="btn btn-danger">Delete</button>
+                                <p style="text-align: right;">{{$todo->todo}} 
+                                <a href="{{route('todo.delete',['id' => $todo->id])}}" class="btn btn-danger">X</a></p>
+                                
                     </div>
                 
             </div>
