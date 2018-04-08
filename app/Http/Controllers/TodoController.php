@@ -41,6 +41,21 @@ class TodoController extends Controller
         return redirect()->route('todo.index');
     }
 
+    public function status($id)
+    {
+        $todo = $this->todoObj->find($id);
+        $todo->status = 1;
+        $todo->save();
+        return redirect()->back();
+    }
+    public function statusundone($id)
+    {
+        $todo = $this->todoObj->find($id);
+        $todo->status = 0;
+        $todo->save();
+        return redirect()->back();
+    }
+
     public function delete($id)
     {
         

@@ -27,3 +27,11 @@ Route::post('/todo/save/{id}',
 ['uses' => 'TodoController@save',
 'as' => 'todo.save']
 );
+Route::get('/todo/status/{id}', 
+['uses' => 'TodoController@status',
+'as' => 'todo.status']
+);
+Route::get('/todo/statusundone/{id}', 
+['uses' => 'TodoController@statusundone',
+'as' => 'todo.statusundone']
+);

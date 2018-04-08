@@ -18,6 +18,12 @@
                                 <p style="text-align: right;">{{$todo->todo}} 
                                 <a href="{{route('todo.delete',['id' => $todo->id])}}" class="btn btn-danger btn-xs">X</a> 
                                 <a href="{{route('todo.update',['id' => $todo->id])}}" class="btn btn-primary btn-xs">update</a>
+                                @if (!$todo->status)
+                                    <a href="{{route('todo.status',['id' => $todo->id])}}" class="btn btn-success btn-xs">Mark as complete</a>
+                                @else
+                                    <a href="{{route('todo.statusundone',['id' => $todo->id])}}" class="btn btn-info btn-xs">Undone</a>
+                                    <span>Completed</span>
+                                @endif
                                 </p>
                                 
                     </div>
